@@ -9,10 +9,10 @@ fun Item.type(): ItemType {
         LEGENDARY
     } else if (name == "Conjured Mana Cake") {
         CONJURED
-    } else if (this.name != "Aged Brie" && this.name != "Backstage passes to a TAFKAL80ETC concert") {
-        GENERAL
-    } else {
+    } else if (this.name == "Aged Brie" || this.name == "Backstage passes to a TAFKAL80ETC concert") {
         OLDER_BETTER
+    } else {
+        GENERAL
     }
 }
 
@@ -41,7 +41,7 @@ fun Item.increase(type: ItemType) {
                     quality++
                 }
             } else {
-                quality ++
+                quality++
             }
         }
     }
